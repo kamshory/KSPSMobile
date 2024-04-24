@@ -19,13 +19,14 @@ $sessionConfig = new AppSessionConfig($appConfig->getSession(), function(){
 });
 
 $database = new PicoDatabase($databaseConfig);
+
 try
 {
 	$database->connect();
 }
 catch(Exception $e)
 {
-	die($e->getMessage());
+	// do nothing
 }
 
 $app = new MobileApp($database);
