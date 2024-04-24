@@ -5,7 +5,7 @@ namespace KSPSMobile;
 
 class GlobalFunction
 {
-    public static function period_str($period)
+    public static function periodStr($period)
     {
         $mn = array('', 'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des');
         $mni = substr($period, 4);
@@ -36,7 +36,7 @@ class GlobalFunction
         return number_format($amount, 2, ",", ".");
     }
     
-    public static function write_session($name, $key, $session)
+    public static function writeSession($name, $key, $session)
     {
         if(strlen($key) > 32)
         {

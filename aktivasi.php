@@ -165,7 +165,7 @@ else if ($inputGet->getAction() == 'set-password' && $inputGet->issetAuth())
 				$app->execute_sql($sql);
 
 				$session = array('u' => $username, 'p' => $password);
-				GlobalFunction::write_session('count', 'SES_KEY', $session);
+				GlobalFunction::writeSession('count', 'SES_KEY', $session);
 
 				header('Location: index.php');
 			} else {

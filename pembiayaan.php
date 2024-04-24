@@ -98,7 +98,7 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 						{
 						?>
 							<tr>
-								<td><?php echo GlobalFunction::period_str($data['periode_id']);?></td>
+								<td><?php echo GlobalFunction::periodStr($data['periode_id']);?></td>
 								<td align="right"><?php echo GlobalFunction::formatBilangan($data['pokok']);?></td>
 								<td align="right"><?php echo GlobalFunction::formatBilangan($data['pokok_dibayar']);?></td>
 								<td align="right"><?php echo GlobalFunction::formatBilangan($data['pokok_sisa']);?></td>
@@ -146,7 +146,7 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 						{
 						?>
 							<tr>
-								<td><?php echo GlobalFunction::period_str($data['periode_id']);?></td>
+								<td><?php echo GlobalFunction::periodStr($data['periode_id']);?></td>
 								<td align="right"><?php echo $data['keterlambatan'];?> hari</td>
 								<td align="right"><?php echo GlobalFunction::formatBilangan($data['denda']);?></td>
 								<td align="right"><?php echo GlobalFunction::formatBilangan($data['denda_dibayar']);?></td>

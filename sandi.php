@@ -30,7 +30,7 @@ if(isset($_POST['sandi_lama']) && isset($_POST['sandi_baru']) && isset($_POST['s
 				$sql2 = "update nasabah set otorisasi = '$new_hash' where nasabah_id = '$nasabah_id' ";
 				$app->execute_sql($sql2);
 				$session = array('u'=>$username, 'p'=>$sandi_baru);
-				GlobalFunction::write_session('count', 'SES_KEY', $session);
+				GlobalFunction::writeSession('count', 'SES_KEY', $session);
 				header('Location: nasabah.php');
 			}
 			else
