@@ -6,7 +6,7 @@ $apiConfig->username = "YfgYTDtrsOISewswI";
 $apiConfig->password = "uitu7iYTDIUydtrst";
 $apiConfig->signature_key = "yuIUTiyDTfdUOuoOIyOop";
 
-function format_bilangan($bilangan)
+function formatBilangan($bilangan)
 {
 	return number_format($bilangan, 0, ",", ".");
 }

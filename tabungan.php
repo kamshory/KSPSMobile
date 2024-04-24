@@ -1,5 +1,6 @@
 <?php
 
+use KSPSMobile\GlobalFunction;
 use MagicObject\Request\InputGet;
 use MagicObject\Request\PicoFilterConstant;
 
@@ -94,10 +95,10 @@ require_once __DIR__."/inc.app/header-tabungan.php";
 					
 				?>
 					<tr>
-						<td><?php echo GlobalFunction::translate_date(date('d M Y', strtotime($data['waktu_buat'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('d M Y', strtotime($data['waktu_buat'])));?></td>
 						<td><?php echo $data['jenis_transaksi'];?></td>
-						<td align="right"><?php if($data['debit'] > 0) echo format_bilangan($data['debit']).' (D)'; if($data['kredit'] > 0) echo format_bilangan($data['kredit']).' (K)';?></td>
-						<td align="right"><?php echo format_bilangan($data['saldo_akhir']);?></td>
+						<td align="right"><?php if($data['debit'] > 0) echo GlobalFunction::formatBilangan($data['debit']).' (D)'; if($data['kredit'] > 0) echo GlobalFunction::formatBilangan($data['kredit']).' (K)';?></td>
+						<td align="right"><?php echo GlobalFunction::formatBilangan($data['saldo_akhir']);?></td>
 					</tr>
 				<?php
 				}

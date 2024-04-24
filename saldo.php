@@ -87,15 +87,15 @@ require_once __DIR__."/inc.app/header-tabungan.php";
 				<table class="table-two-side" width="100%" cellspacing="0" cellpadding="0" border="0">
 					<tbody><tr>
 						<td>Saldo Rekening</td>
-						<td><?php echo format_bilangan($remote_data['data']['data_rekening'][0]['saldo']);?></td>
+						<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_rekening'][0]['saldo']);?></td>
 					</tr>
 					<tr>
 						<td>Saldo Efektif</td>
-						<td><?php echo format_bilangan($remote_data['data']['data_rekening'][0]['saldo'] - $remote_data['data']['data_rekening'][0]['saldo_tertahan'] - $remote_data['data']['data_produk_simpanan'][0]['biaya_penutupan']);?></td>
+						<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_rekening'][0]['saldo'] - $remote_data['data']['data_rekening'][0]['saldo_tertahan'] - $remote_data['data']['data_produk_simpanan'][0]['biaya_penutupan']);?></td>
 					</tr>
 					<tr>
 						<td>Transaksi Terakhir</td>
-						<td><?php echo GlobalFunction::translate_date(date('j M Y H:i:s', strtotime($remote_data['data']['data_rekening'][0]['transaksi_terakhir'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j M Y H:i:s', strtotime($remote_data['data']['data_rekening'][0]['transaksi_terakhir'])));?></td>
 					</tr>
 												
 					</tbody>

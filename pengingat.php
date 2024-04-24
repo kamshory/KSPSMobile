@@ -1,5 +1,6 @@
 <?php
 
+use KSPSMobile\GlobalFunction;
 use MagicObject\Request\InputGet;
 use MagicObject\Request\PicoFilterConstant;
 
@@ -224,7 +225,7 @@ require_once __DIR__."/inc.app/header-pengingat.php";
 										"data"=> array(
 											"title"=> "Pembayaran Cicilan Ke ".$data['ke'],
 											"description"=> "Pembayaran Cicilan Koperasi Albasiko Sebesar Rp "
-												.format_bilangan($data['total_sisa']+$data['denda']),
+												.formatBilangan($data['total_sisa']+$data['denda']),
 											"eventLocation"=>trim($loket." ".$alamat),
 											"beginTime"=> date('Y-m-d', $jatuh_tempo)." ".$jam_buka,
 											"endTime"=> date('Y-m-d', $jatuh_tempo)." ".$jam_tutup,
@@ -233,7 +234,7 @@ require_once __DIR__."/inc.app/header-pengingat.php";
 										);
 										$tanggal_jatuh_tempo = date('Y-m-d', $jatuh_tempo);
 							?>
-								<li><?php echo GlobalFunction::translate_date(date('l, j M Y', $jatuh_tempo));?><?php
+								<li><?php echo GlobalFunction::translateDate(date('l, j M Y', $jatuh_tempo));?><?php
 
 								if($tanggal_jatuh_tempo	> $hari_ini)
 								{
@@ -252,7 +253,7 @@ require_once __DIR__."/inc.app/header-pengingat.php";
 								else
 								{
 									?>
-									<span class="float-right btn btn-primary">Denda <?php echo format_bilangan($data['denda_sisa']);?></span>
+									<span class="float-right btn btn-primary">Denda <?php echo GlobalFunction::formatBilangan($data['denda_sisa']);?></span>
 									<?php
 								}
 								?>

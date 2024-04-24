@@ -6,7 +6,7 @@ require_once __DIR__."/config.php";
 require_once __DIR__."/aes.php";
 require_once __DIR__."/session.php";
 
-$stored_session = GlobalFunction::read_session('count', 'SES_KEY');
+$stored_session = GlobalFunction::readSession('count', 'SES_KEY');
 if($stored_session === null || !isset($stored_session['u']) || !isset($stored_session['p']))
 {
 	include_once dirname(dirname(__FILE__))."/login.php";

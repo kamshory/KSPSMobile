@@ -1,5 +1,6 @@
 <?php
 
+use KSPSMobile\GlobalFunction;
 use MagicObject\Request\InputGet;
 use MagicObject\Request\PicoFilterConstant;
 
@@ -98,19 +99,19 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 						?>
 							<tr>
 								<td><?php echo GlobalFunction::period_str($data['periode_id']);?></td>
-								<td align="right"><?php echo format_bilangan($data['pokok']);?></td>
-								<td align="right"><?php echo format_bilangan($data['pokok_dibayar']);?></td>
-								<td align="right"><?php echo format_bilangan($data['pokok_sisa']);?></td>
-								<td align="right"><?php echo format_bilangan($data['jasa']);?></td>
-								<td align="right"><?php echo format_bilangan($data['jasa_dibayar']);?></td>
-								<td align="right"><?php echo format_bilangan($data['jasa_sisa']);?></td>
-								<td align="right"><?php echo format_bilangan($data['tabarru']);?></td>
-								<td align="right"><?php echo format_bilangan($data['tabarru_dibayar']);?></td>
-								<td align="right"><?php echo format_bilangan($data['tabarru_sisa']);?></td>
-								<td align="right"><?php echo format_bilangan($data['total']);?></td>
-								<td align="right"><?php echo format_bilangan($data['total_dibayar']);?></td>
-								<td align="right"><?php echo format_bilangan($data['total_sisa']);?></td>
-								<td><?php if($data['waktu_pelunasan']) echo GlobalFunction::translate_date(date('d M Y H:i', strtotime($data['waktu_pelunasan']))); else echo '&nbsp;';?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['pokok']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['pokok_dibayar']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['pokok_sisa']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['jasa']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['jasa_dibayar']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['jasa_sisa']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['tabarru']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['tabarru_dibayar']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['tabarru_sisa']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['total']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['total_dibayar']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['total_sisa']);?></td>
+								<td><?php if($data['waktu_pelunasan']) echo GlobalFunction::translateDate(date('d M Y H:i', strtotime($data['waktu_pelunasan']))); else echo '&nbsp;';?></td>
 							</tr>
 						<?php
 						}
@@ -147,9 +148,9 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 							<tr>
 								<td><?php echo GlobalFunction::period_str($data['periode_id']);?></td>
 								<td align="right"><?php echo $data['keterlambatan'];?> hari</td>
-								<td align="right"><?php echo format_bilangan($data['denda']);?></td>
-								<td align="right"><?php echo format_bilangan($data['denda_dibayar']);?></td>
-								<td align="right"><?php echo format_bilangan($data['denda_sisa']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['denda']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['denda_dibayar']);?></td>
+								<td align="right"><?php echo GlobalFunction::formatBilangan($data['denda_sisa']);?></td>
 							</tr>
 						<?php
 						}
@@ -227,15 +228,15 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 						</tr>
 						<tr>
 							<td>Waktu Pengajuan</td>
-							<td><span class="compare"><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_pengajuan']))); ?></span></td>
+							<td><span class="compare"><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_pengajuan']))); ?></span></td>
 						</tr>
 						<tr>
 							<td>Jumlah Pengajuan</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jumlah_pengajuan']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jumlah_pengajuan']); ?></td>
 						</tr>
 						<tr>
 							<td>Jasa Pengajuan</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jasa_pengajuan']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jasa_pengajuan']); ?></td>
 						</tr>
 						<tr>
 							<td>Tenor Pengajuan</td>
@@ -247,11 +248,11 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 						</tr>
 						<tr>
 							<td>Waktu Disetujui</td>
-							<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_disetujui']))); ?></td>
+							<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_disetujui']))); ?></td>
 						</tr>
 						<tr>
 							<td>Jumlah Disetujui</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jumlah_disetujui']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jumlah_disetujui']); ?></td>
 						</tr>
 						<tr>
 							<td>Tenor Disetujui</td>
@@ -263,39 +264,39 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 						</tr>
 						<tr>
 							<td>Pokok</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['pokok']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['pokok']); ?></td>
 						</tr>
 						<tr>
 							<td>Pokok Dibayar</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['pokok_dibayar']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['pokok_dibayar']); ?></td>
 						</tr>
 						<tr>
 							<td>Pokok Sisa</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['pokok_sisa']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['pokok_sisa']); ?></td>
 						</tr>
 						<tr>
 							<td>Jasa</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jasa']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jasa']); ?></td>
 						</tr>
 						<tr>
 							<td>Jasa Dibayar</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jasa_dibayar']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jasa_dibayar']); ?></td>
 						</tr>
 						<tr>
 							<td>Jasa Sisa</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jasa_sisa']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jasa_sisa']); ?></td>
 						</tr>
 						<tr>
 							<td>Total</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['total']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['total']); ?></td>
 						</tr>
 						<tr>
 							<td>Total Dibayar</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['total_dibayar']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['total_dibayar']); ?></td>
 						</tr>
 						<tr>
 							<td>Total Sisa</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['total_sisa']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['total_sisa']); ?></td>
 						</tr>
 						<tr>
 							<td>Tenor</td>
@@ -322,11 +323,11 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 						?>
 						<tr>
 							<td>Entri Data</td>
-							<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_buat']))); ?></td>
+							<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_buat']))); ?></td>
 						</tr>
 						<tr>
 							<td>Pembaruan Data</td>
-							<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_ubah']))); ?></td>
+							<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_ubah']))); ?></td>
 						</tr>
 						
 					</tbody>
@@ -360,7 +361,7 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 							</tr>
 							<tr>
 								<td>Tanggal Pembelian</td>
-								<td><?php echo GlobalFunction::translate_date(date('j M Y', strtotime($data['tanggal_pembelian']))); ?></td>
+								<td><?php echo GlobalFunction::translateDate(date('j M Y', strtotime($data['tanggal_pembelian']))); ?></td>
 							</tr>
 							<tr>
 								<td>Masa Berlaku</td>
@@ -384,7 +385,7 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 							</tr>
 							<tr>
 								<td>Taksiran Harga</td>
-								<td><?php echo format_bilangan($data['taksiran_harga']); ?></td>
+								<td><?php echo GlobalFunction::formatBilangan($data['taksiran_harga']); ?></td>
 							</tr>
 							<tr>
 								<td>Mata Uang </td>
@@ -400,11 +401,11 @@ require_once __DIR__."/inc.app/header-pembiayaan.php";
 							</tr>
 							<tr>
 								<td>Entri Data</td>
-								<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($data['waktu_buat']))); ?></td>
+								<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($data['waktu_buat']))); ?></td>
 							</tr>
 							<tr>
 								<td>Pembaruan Data</td>
-								<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($data['waktu_ubah']))); ?></td>
+								<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($data['waktu_ubah']))); ?></td>
 							</tr>
 													
 						</tbody>

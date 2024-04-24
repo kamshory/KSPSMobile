@@ -66,7 +66,7 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 					</tr>
 					<tr>
 						<td>Tanggal Lahir</td>
-						<td><?php echo GlobalFunction::translate_date(date('j F Y', strtotime($remote_data['data']['data_nasabah'][0]['tanggal_lahir'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j F Y', strtotime($remote_data['data']['data_nasabah'][0]['tanggal_lahir'])));?></td>
 					</tr>
 					<tr>
 						<td>Jenis Kelamin</td>
@@ -147,11 +147,11 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 					</tr>
 					<tr>
 						<td>Entri Data</td>
-						<td><?php echo GlobalFunction::translate_date(date('j M Y H:i:s', strtotime($remote_data['data']['data_nasabah'][0]['waktu_buat'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j M Y H:i:s', strtotime($remote_data['data']['data_nasabah'][0]['waktu_buat'])));?></td>
 					</tr>
 					<tr>
 						<td>Pembaruan Data</td>
-						<td><?php echo GlobalFunction::translate_date(date('j M Y H:i:s', strtotime($remote_data['data']['data_nasabah'][0]['waktu_ubah'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j M Y H:i:s', strtotime($remote_data['data']['data_nasabah'][0]['waktu_ubah'])));?></td>
 					</tr>
 					
 				</tbody></table>

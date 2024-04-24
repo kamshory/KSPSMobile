@@ -1,5 +1,6 @@
 <?php
 
+use KSPSMobile\GlobalFunction;
 use MagicObject\Request\InputGet;
 use MagicObject\Request\PicoFilterConstant;
 
@@ -104,11 +105,11 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 					</tr>
 					<tr>
 						<td>Saldo</td>
-						<td><?php echo format_bilangan($remote_data['data']['data_rekening'][0]['saldo']);?></td>
+						<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_rekening'][0]['saldo']);?></td>
 					</tr>
 					<tr>
 						<td>Saldo Tertahan</td>
-						<td><?php echo format_bilangan($remote_data['data']['data_rekening'][0]['saldo_tertahan']);?></td>
+						<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_rekening'][0]['saldo_tertahan']);?></td>
 					</tr>
 					<tr>
 						<td>Terima Bagi Hasil</td>
@@ -116,7 +117,7 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 					</tr>
 					<tr>
 						<td>Waktu Buka</td>
-						<td><?php echo GlobalFunction::translate_date(date('j M Y', strtotime($remote_data['data']['data_rekening'][0]['waktu_buka'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j M Y', strtotime($remote_data['data']['data_rekening'][0]['waktu_buka'])));?></td>
 					</tr>
 					<tr>
 						<td>Blokir Tabungan</td>
@@ -136,15 +137,15 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 					</tr>
 						<tr>
 						<td>Transaksi Terakhir</td>
-						<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_rekening'][0]['transaksi_terakhir'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_rekening'][0]['transaksi_terakhir'])));?></td>
 					</tr>
 					<tr>
 						<td>Entri Data</td>
-						<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_rekening'][0]['waktu_buat'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_rekening'][0]['waktu_buat'])));?></td>
 					</tr>
 					<tr>
 						<td>Pembaruan Data</td>
-						<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_rekening'][0]['waktu_ubah'])));?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_rekening'][0]['waktu_ubah'])));?></td>
 					</tr>
 					
 				</tbody>

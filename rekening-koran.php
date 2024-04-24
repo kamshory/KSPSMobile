@@ -140,12 +140,12 @@ require_once __DIR__."/inc.app/header-tabungan.php";
 					{
 					?>
 					<tr>
-						<td><?php echo GlobalFunction::translate_date(date('j M Y H:i:s', strtotime($data['waktu_buat']))); ?></td>
+						<td><?php echo GlobalFunction::translateDate(date('j M Y H:i:s', strtotime($data['waktu_buat']))); ?></td>
 						<td><?php echo $data['cabang'];?></td>
 						<td><?php echo $data['jenis_transaksi'];?></td>
-						<td align="right"><?php echo format_bilangan($data['debit']);?></td>
-						<td align="right"><?php echo format_bilangan($data['kredit']);?></td>
-						<td align="right"><?php echo format_bilangan($data['saldo_akhir']);?></td>
+						<td align="right"><?php echo GlobalFunction::formatBilangan($data['debit']);?></td>
+						<td align="right"><?php echo GlobalFunction::formatBilangan($data['kredit']);?></td>
+						<td align="right"><?php echo GlobalFunction::formatBilangan($data['saldo_akhir']);?></td>
 						<td><?php echo $data['nomor_referensi'];?></td>
 					</tr>
 					<?php

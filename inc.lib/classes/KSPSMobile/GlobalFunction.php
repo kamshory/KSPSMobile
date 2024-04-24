@@ -11,7 +11,7 @@ class GlobalFunction
         $mni = substr($period, 4);
         return @$mn[(int)$mni].' '.substr($period, 0, 4);
     }
-    public static function translate_date($date)
+    public static function translateDate($date)
     {
         $src1 = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
         $dst1 = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
@@ -31,7 +31,7 @@ class GlobalFunction
         $date = str_replace($src4, $dst4, $date);
         return $date;
     }
-    public static function format_bilangan($amount)
+    public static function formatBilangan($amount)
     {
         return number_format($amount, 2, ",", ".");
     }
@@ -53,7 +53,7 @@ class GlobalFunction
         $cipher = encryptPIN($key, json_encode($session))->getData();
         $_SESSION[$name] = $cipher;
     }
-    public static function read_session($name, $key)
+    public static function readSession($name, $key)
     {
         if(strlen($key) > 32)
         {

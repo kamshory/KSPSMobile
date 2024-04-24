@@ -78,11 +78,11 @@ $transaksi_terakhir = $data2['transaksi_terakhir'];
 	<tbody>
 		<tr>
 			<td>Saldo Rekening</td>
-			<td data-text="Saldo Rekening"><?php echo $mata_uang_id;?> <?php echo format_bilangan($saldo);?></td>
+			<td data-text="Saldo Rekening"><?php echo $mata_uang_id;?> <?php echo GlobalFunction::formatBilangan($saldo);?></td>
 		</tr>
 		<tr>
 			<td>Saldo Efektif</td>
-			<td data-text="Saldo Efektif"><?php echo $mata_uang_id;?> <?php echo format_bilangan($saldo_efektif);?></td>
+			<td data-text="Saldo Efektif"><?php echo $mata_uang_id;?> <?php echo GlobalFunction::formatBilangan($saldo_efektif);?></td>
 		</tr>
 		<tr>
 			<td>Transaksi Terakhir</td>

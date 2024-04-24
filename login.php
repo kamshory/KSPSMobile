@@ -1,4 +1,7 @@
 <?php
+
+use KSPSMobile\GlobalFunction;
+
 require_once __DIR__."/inc.app/config.php";
 require_once __DIR__."/inc.app/session.php";
 require_once __DIR__."/inc.app/aes.php";
@@ -9,13 +12,13 @@ if(isset($_POST['username']) && isset($_POST['password']))
 	$password = trim($_POST['password']);
 	$sql = "select * from nasabah where username='$username' ";
 	$data_nasabah = $app->get_data_from_db($sql);
-	if(count($data_nasabah))
+	if($data_nasabah != null)
 	{
 		$hash = $data_nasabah[0]['otorisasi'];	
 		if(password_verify($password, $hash))
 		{
 			$session = array('u'=>$username, 'p'=>$password);
-			write_session('count', 'SES_KEY', $session);
+			GlobalFunction::write_session('count', 'SES_KEY', $session);
 			header('Location: index.php');
 		} 
 		else 

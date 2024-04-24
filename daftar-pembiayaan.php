@@ -1,4 +1,6 @@
 <?php
+
+use KSPSMobile\GlobalFunction;
 use MagicObject\Request\InputGet;
 use MagicObject\Request\PicoFilterConstant;
 
@@ -131,15 +133,15 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 						</tr>
 						<tr>
 							<td>Waktu Pengajuan</td>
-							<td><span class="compare"><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_pengajuan']))); ?></span></td>
+							<td><span class="compare"><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_pengajuan']))); ?></span></td>
 						</tr>
 						<tr>
 							<td>Jumlah Pengajuan</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jumlah_pengajuan']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jumlah_pengajuan']); ?></td>
 						</tr>
 						<tr>
 							<td>Jasa Pengajuan</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jasa_pengajuan']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jasa_pengajuan']); ?></td>
 						</tr>
 						<tr>
 							<td>Tenor Pengajuan</td>
@@ -151,11 +153,11 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 						</tr>
 						<tr>
 							<td>Waktu Disetujui</td>
-							<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_disetujui']))); ?></td>
+							<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_disetujui']))); ?></td>
 						</tr>
 						<tr>
 							<td>Jumlah Disetujui</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jumlah_disetujui']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jumlah_disetujui']); ?></td>
 						</tr>
 						<tr>
 							<td>Tenor Disetujui</td>
@@ -167,39 +169,39 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 						</tr>
 						<tr>
 							<td>Pokok</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['pokok']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['pokok']); ?></td>
 						</tr>
 						<tr>
 							<td>Pokok Dibayar</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['pokok_dibayar']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['pokok_dibayar']); ?></td>
 						</tr>
 						<tr>
 							<td>Pokok Sisa</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['pokok_sisa']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['pokok_sisa']); ?></td>
 						</tr>
 						<tr>
 							<td>Jasa</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jasa']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jasa']); ?></td>
 						</tr>
 						<tr>
 							<td>Jasa Dibayar</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jasa_dibayar']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jasa_dibayar']); ?></td>
 						</tr>
 						<tr>
 							<td>Jasa Sisa</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['jasa_sisa']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['jasa_sisa']); ?></td>
 						</tr>
 						<tr>
 							<td>Total</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['total']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['total']); ?></td>
 						</tr>
 						<tr>
 							<td>Total Dibayar</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['total_dibayar']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['total_dibayar']); ?></td>
 						</tr>
 						<tr>
 							<td>Total Sisa</td>
-							<td><?php echo format_bilangan($remote_data['data']['data_pembiayaan'][0]['total_sisa']); ?></td>
+							<td><?php echo GlobalFunction::formatBilangan($remote_data['data']['data_pembiayaan'][0]['total_sisa']); ?></td>
 						</tr>
 						<tr>
 							<td>Tenor</td>
@@ -230,11 +232,11 @@ require_once __DIR__."/inc.app/header-nasabah.php";
 						?>
 						<tr>
 							<td>Entri Data</td>
-							<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_buat']))); ?></td>
+							<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_buat']))); ?></td>
 						</tr>
 						<tr>
 							<td>Pembaruan Data</td>
-							<td><?php echo GlobalFunction::translate_date(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_ubah']))); ?></td>
+							<td><?php echo GlobalFunction::translateDate(date('j M Y H:i', strtotime($remote_data['data']['data_pembiayaan'][0]['waktu_ubah']))); ?></td>
 						</tr>
 						
 					</tbody>
