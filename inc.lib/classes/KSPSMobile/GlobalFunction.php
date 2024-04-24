@@ -1,5 +1,8 @@
 <?php
 
+namespace KSPSMobile;
+
+
 class GlobalFunction
 {
     public static function period_str($period)
@@ -33,4 +36,46 @@ class GlobalFunction
         return number_format($amount, 2, ",", ".");
     }
     
+    public static function write_session($name, $key, $session)
+    {
+        if(strlen($key) > 32)
+        {
+            $key = substr($key, 0, 32);
+        }
+        else if(strlen($key) < 32 && strlen($key) > 24)
+        {
+            $key = substr($key, 0, 24);
+        }
+        else if(strlen($key) < 24 && strlen($key) > 16)
+        {
+            $key = substr($key, 0, 16);
+        }
+        $cipher = encryptPIN($key, json_encode($session))->getData();
+        $_SESSION[$name] = $cipher;
+    }
+    public static function read_session($name, $key)
+    {
+        if(strlen($key) > 32)
+        {
+            $key = substr($key, 0, 32);
+        }
+        else if(strlen($key) < 32 && strlen($key) > 24)
+        {
+            $key = substr($key, 0, 24);
+        }
+        else if(strlen($key) < 24 && strlen($key) > 16)
+        {
+            $key = substr($key, 0, 16);
+        }
+        if(isset($_SESSION[$name]))
+        {
+            $cipher = $_SESSION[$name];
+            return json_decode(decryptPIN($key, $cipher), true);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 }

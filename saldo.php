@@ -1,4 +1,6 @@
 <?php
+
+use KSPSMobile\GlobalFunction;
 use MagicObject\Request\InputGet;
 use MagicObject\Request\PicoFilterConstant;
 use MagicObject\Request\PicoRequest;
@@ -40,7 +42,7 @@ $request = array(
 	)
 );
 
-$remote_data = json_decode($api->get_data(json_encode($request)), true);
+$remote_data = json_decode($api->getData(json_encode($request)), true);
 require_once __DIR__."/inc.app/header.php";
 require_once __DIR__."/inc.app/header-tabungan.php";
 ?>

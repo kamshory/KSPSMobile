@@ -51,7 +51,7 @@ $request = array(
 		)
 	)
 );
-$response = $api->get_data(json_encode($request));
+$response = $api->getData(json_encode($request));
 $remote_data = json_decode($response, true);
 
 require_once __DIR__."/inc.app/header.php";

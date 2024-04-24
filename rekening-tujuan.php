@@ -27,7 +27,7 @@ if($inputGet->getAction() == 'inquiry-rekening')
 			)
 		);
 		
-		$response = $api->get_data(json_encode($request));
+		$response = $api->getData(json_encode($request));
 		$remote_data = json_decode($response, true);
 		$remote_data['data']['data_asli'] = base64_encode(json_encode($remote_data['data']['data_rekening']));
 		echo json_encode($remote_data, JSON_PRETTY_PRINT);

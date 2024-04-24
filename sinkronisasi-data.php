@@ -25,7 +25,7 @@ $request = array(
 );
 
 
-$response = $api->get_data(json_encode($request));
+$response = $api->getData(json_encode($request));
 $remote_data = json_decode($response, true);
 if($remote_data['response_code'] == '001')
 {	

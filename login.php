@@ -15,7 +15,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 		if(password_verify($password, $hash))
 		{
 			$session = array('u'=>$username, 'p'=>$password);
-			write_session('count', SES_KEY, $session);
+			write_session('count', 'SES_KEY', $session);
 			header('Location: index.php');
 		} 
 		else 

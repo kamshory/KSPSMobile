@@ -1,5 +1,6 @@
 <?php
 
+use KSPSMobile\GlobalFunction;
 use MagicObject\Request\InputGet;
 use MagicObject\Request\PicoFilterConstant;
 
@@ -58,7 +59,7 @@ $request = array(
 );
 
 
-$response = $api->get_data(json_encode($request));
+$response = $api->getData(json_encode($request));
 $remote_data = json_decode($response, true);
 
 

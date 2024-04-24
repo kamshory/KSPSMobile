@@ -1,5 +1,6 @@
 <?php
 
+use KSPSMobile\GlobalFunction;
 use MagicObject\Request\InputGet;
 use MagicObject\Request\InputPost;
 use MagicObject\Request\PicoFilterConstant;
@@ -20,7 +21,7 @@ if ($inputPost->getAction() == 'aktivasi' && $inputPost->issetData()) {
 			"kode_aktivasi" => $kode_aktivasi
 		)
 	);
-	$response = $api->get_data(json_encode($request));
+	$response = $api->getData(json_encode($request));
 	
 	$remote_data = json_decode($response, true);
 	if ($remote_data['response_code'] == '001') {
@@ -164,7 +165,7 @@ else if ($inputGet->getAction() == 'set-password' && $inputGet->issetAuth())
 				$app->execute_sql($sql);
 
 				$session = array('u' => $username, 'p' => $password);
-				write_session('count', 'SES_KEY', $session);
+				GlobalFunction::write_session('count', 'SES_KEY', $session);
 
 				header('Location: index.php');
 			} else {

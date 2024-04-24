@@ -1,4 +1,7 @@
 <?php
+
+use KSPSMobile\GlobalFunction;
+
 require_once __DIR__."/inc.app/auth-with-form.php";
 require_once __DIR__."/inc.app/api.php";
 require_once __DIR__."/inc.app/header.php";
@@ -27,7 +30,7 @@ if(isset($_POST['sandi_lama']) && isset($_POST['sandi_baru']) && isset($_POST['s
 				$sql2 = "update nasabah set otorisasi = '$new_hash' where nasabah_id = '$nasabah_id' ";
 				$app->execute_sql($sql2);
 				$session = array('u'=>$username, 'p'=>$sandi_baru);
-				write_session('count', 'SES_KEY', $session);
+				GlobalFunction::write_session('count', 'SES_KEY', $session);
 				header('Location: nasabah.php');
 			}
 			else

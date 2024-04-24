@@ -31,7 +31,7 @@ function transferInquiry($api, $auth_nasabah, $rekening_asal, $rekening_tujuan, 
 		)
 	);
 	
-	return $api->get_data(json_encode($request));
+	return $api->getData(json_encode($request));
 }
 function transferKonfirmasi($api, $auth_nasabah, $rekening_asal, $rekening_tujuan, $jumlah, $session_id, $otp)
 {
@@ -56,7 +56,7 @@ function transferKonfirmasi($api, $auth_nasabah, $rekening_asal, $rekening_tujua
 		)
 	);
 	
-	return $api->get_data(json_encode($request));
+	return $api->getData(json_encode($request));
 }
 ?>
   
@@ -190,7 +190,7 @@ function transferKonfirmasi($api, $auth_nasabah, $rekening_asal, $rekening_tujua
 						)
 					);
 					
-					$response = $api->get_data(json_encode($request));
+					$response = $api->getData(json_encode($request));
 					$remote_data = json_decode($response, true);
 					
 					try
