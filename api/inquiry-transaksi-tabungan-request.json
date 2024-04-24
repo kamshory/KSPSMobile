@@ -1,0 +1,17 @@
+{
+	"command":"inquiry-transaksi-tabungan",
+	"data":{
+		"nomor_rekening":"1288234523467",
+		"date_time":"2020-10-10T10:10:10.123Z",
+		"require":[
+			{
+				"data":"rekening_koran",
+				"filter":{
+					"date_begin":"2020-10-10",
+					"date_end":"2020-10-10",
+					"jenis_transaksi_id":""
+				}
+			}
+		]
+	}
+}

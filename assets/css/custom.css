@@ -1,0 +1,283 @@
+#header .logo h1{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: calc(100vw - 85px);
+	display: block;
+}
+#footer .copyright, #footer .credits {
+	padding: 5px 0;
+	float:none;
+}
+#header {
+  padding: 15px 0 0 0;
+}
+#footer {
+  padding: 0 0 0 0;
+}
+.credits{
+	display:none;
+}
+
+.content-tab{
+	display:none;
+}
+.content-tab.active{
+	display:block;
+}
+.content-menu{
+	padding:10px 16px 0 16px;
+	border-bottom:1px solid #CCCCCC;
+}
+.content-menu nav > ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.content-menu nav > ul > li{
+	display:inline;
+}
+.content-menu nav > ul > li a{
+	display:inline-block;
+	padding:5px 10px;
+	border:solid #CCCCCC;
+	border-width:1px 1px 0px 1px;
+	background-color:#EEEEEE;
+	margin-bottom:-1px;
+	font-size:12px;
+	color:#555555;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;
+}
+.content-menu nav > ul > li.active a{
+	background-color:#FFFFFF;
+}
+
+.main-comtent{
+	display:block;
+	width:100%;
+	padding:40px 0 20px 0;
+	min-height:calc(100vh - 154px);
+	font-size:12px;
+}
+.table-row{
+	width:100%;
+	border-color:#CCCCCC;
+	border-collaps:collaps;
+}
+.table-row td{
+	font-size:12px;
+	padding:5px 5px;
+	border-color:#CCCCCC;
+	position:relative;
+}
+.table-row thead td{
+	font-weight:bold;
+	text-align:center;
+	position:relative;
+}
+.table-two-side{
+	border-collaps:collaps;
+	margin-bottom:10px;
+}
+.table-two-side td{
+	padding:2px 0;
+	font-size:12px;
+	position:relative;
+}
+.table-two-side tr > td:first-child{
+	width:35%;
+}
+input[type="date"] {
+    border: 1px solid #CCC;
+    padding: 3px 6px;
+	background-color:#FFFFFF;
+	font-size:12px;
+}
+
+
+.form-control{
+	font-size:12px;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 1px rgba(0,123,255,.25);
+}
+.btn{
+	font-size:12px;
+}
+
+
+@media screen and (min-width:992px)
+{
+.table-block{
+	width:100%;
+	border-color:#CCCCCC;
+	border-collaps:collaps;
+}
+.table-block td{
+	font-size:12px;
+	padding:5px 5px;
+	border-color:#CCCCCC;
+}
+.table-block thead td{
+	font-weight:bold;
+	text-align:center;
+}
+}
+@media screen and (max-width:991px)
+{
+.table-block{
+	border:none;
+	border-collaps:collaps;
+}
+
+.table-block thead{
+	display:none;
+}
+.table-block tbody tr{
+	display:block;
+	border:none;
+	margin:0 0 20px 0;
+}
+.table-block tbody tr td{
+	font-size:12px;
+	text-align:left;
+	display:block;
+	width:100%;
+	border:solid #CCCCCC;
+	border-width:0px 1px 1px 1px;
+	padding:5px 5px 5px calc(35%);
+	position:relative;
+	
+}
+
+.table-block tbody tr td:before {
+   content: attr(data-text) " ";
+   width:clac(35% - 8px);
+   display:block;
+   position:absolute;
+   left:0;
+   padding:0px 5px;
+   text-align:left;
+   overflow:hidden;
+   text-overflow:ellipsis;
+}
+.table-block tbody tr td:after {
+   content: ":";
+   position:absolute;
+   left:calc(35% - 8px);
+   padding:0px 0px;
+}
+.table-block tbody tr td:first-child{
+	display:block;
+	width:100%;
+	border-width:1px 1px 1px 1px;
+	
+}
+}
+
+
+@media screen and (min-width:992px)
+{
+	.btn{
+		font-size:11pt;
+	}
+	.form-control{
+		font-size:11pt;
+	}
+	input[type="date"] {
+		font-size:11pt;
+	}
+
+	.table-row td {
+		font-size:9pt;
+	}
+	.table-block tbody tr td{
+		font-size:9pt;
+	}
+	.table-two-side td{
+		font-size:9pt;
+	}
+	.content-menu nav > ul > li a{
+		font-size:11pt;
+	}
+
+}
+
+.icon-check-right{
+	position:absolute;
+	display:inline-block;
+	width:24px;
+	height:24px;
+	border-radius:50%;
+	border:1px solid #CCCCCC;
+	text-align:center;
+	right:5px;
+	top:2px;
+}
+.icon-check-right a i{
+	vertical-align:bottom;
+}
+.icon-check-right a{
+	display:block;
+}
+.data-selector{
+	padding:2px 0px 10px 0px;
+}
+.otp-control{
+	width: 32px;
+	text-align: center;
+	border: 1px solid #CCC;
+	padding: 3px 4px;
+	font-size: 12pt;
+}
+
+.modal {
+   z-index: 10040;
+}
+
+.button-area{
+	padding:8px 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.progress-bar-loading{
+	height:4px;
+	width:100%;
+	top:0;	
+	overflow:hidden;
+	display:none;
+}
+.progress-bar-loading-inner{
+	position:absolute;
+	z-index:2000;
+	height:4px;
+	width:100%;
+	overflow:hidden;
+}
+.progress-bar{
+	position:absolute;
+	width:55%;
+	height:4px;
+	background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(43,118,140,1) 40%, rgba(9,96,121,1) 50%, rgba(39,115,137,1) 60%, rgba(255,255,255,0) 100%);
+	animation-name: progress;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+@keyframes progress {
+  from {left: -70vw;}
+  to {left:170vw;}
+}

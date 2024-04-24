@@ -1,0 +1,14 @@
+{
+	"command":"inquiry-nasabah",
+	"data":{
+		"nik":"13873712378121874",
+		"date_time":"2020-10-10T10:10:10.123Z",
+		"require":[
+			{
+				"data":"data_nasabah"
+			}
+		]
+	},
+	"response_code":"001",
+	"response_text":"Sukses"
+}

@@ -1,0 +1,18 @@
+{
+	"command":"inquiry-nasabah",
+	"data":{
+		"nik":"13873712378121874",
+		"date_time":"2020-10-10T10:10:10.123Z",
+		"data_nasabah":{
+			"nama":"Joko Susilo",
+			"nik":"13873712378121874",
+			"nkk":"13873712378121874",
+			"tempat_lahir":"Kinali",
+			"tanggal_lahir":"1982-10-19",
+			"telepon":"0812222222",
+			"alamat":""
+		}
+	},
+	"response_code":"001",
+	"response_text":"Sukses"
+}
